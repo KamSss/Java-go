@@ -1,5 +1,3 @@
-import com.sun.org.apache.bcel.internal.generic.ANEWARRAY;
-
 import java.util.ArrayList;
 
 /**
@@ -15,52 +13,42 @@ import java.util.ArrayList;
 //        System.out.print("wtf is " + wordAndWord);
 //    }
 //}
-//class Count{
-//    String name = "空白name";
-//    int money = 0;
-//    void showIt(){
-//        System.out.println(name + " 账户余额为：" + money);
-//    }
-//}
-//class TestGetCount{
-//    public static void main(String[] args){
-//        Count a = new Count();
-//        a.name = "张三";
-//        a.money = 100;
-//        while(a.money != 0){
-//            a.showIt();
-//            a.money -= 20;
-//        }
-//    }
-//}
-//class TestSuperFor{
-//    public static void main(String[] args){
-//        int[] array = new int[3];
-//        array[0] = 3;
-//        array[1] = 2;
-//        array[2] = 1;
-//        for(int i : array){
-//            System.out.println(i);
-//        }
-//    }
-//}
+
 class Dog{
+    static final int BIG_DOG_LENGTH = 40;
     String name;
+    int size;
     void bark(){
-        System.out.println("wow wow im " + name);
+        if(size > BIG_DOG_LENGTH){
+            System.out.println("我又不咬人.jpg " + name);
+        }
+        else{
+            System.out.println("恶龙咆哮！嗷呜！" + name);
+        }
     }
 }
-class TestArrayList{
+
+class TestArrayList {
     public static void main(String[] args){
-        ArrayList<Dog> arr = new ArrayList<Dog>();
+        ArrayList<Dog> dogList = new ArrayList<Dog>();
         Dog a = new Dog();
         Dog b = new Dog();
-        a.name = "bary allen";
-        b.name = "steve";
-        arr.add(a);
-        arr.add(b);
-        for(Dog i : arr){
+        Dog c = new Dog();
+        a.name = "Trump";
+        b.name = "piao";
+        c.name = "anbei";
+        a.size = 50;
+        b.size = 30;
+        c.size = 40;
+        dogList.add(a);
+        dogList.add(b);
+        dogList.add(c);
+        System.out.println(dogList.contains(a));
+        System.out.println(dogList.indexOf(c));
+        dogList.remove(b);
+        for(Dog i : dogList){
             i.bark();
         }
+        dogList.get(0).bark();
     }
 }
