@@ -2,16 +2,6 @@ import sun.plugin.viewer.context.PluginAppletContext;
 
 import java.util.Scanner;
 
-//class Ai{
-//    int target;
-//    void setTarget{
-//        target = (int)(100 * Math.random());
-//    }
-//    void showRes{
-//
-//    }
-//}
-
 class Player{
     int num;
     int iGuess(){
