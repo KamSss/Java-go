@@ -1,3 +1,5 @@
+package ssdas;
+
 import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -5,17 +7,17 @@ import java.util.List;
 
 class SelectMessage{
 
-    Person getMessage(String messageOfThisLine,int line) throws IOException {
+    Person getMessage(String messageOfThisLine, int line) throws IOException {
         //1.把string拆分成对象的各个属性,并且做修改
         System.out.println(messageOfThisLine);
-
+        File tmp = File.createTempFile("temp", null);
         //2.把属性写入本行
-        try {
-            File tmp = File.createTempFile("temp", null);
+        try(FileOutputStream fos = new FileOutputStream(tmp);
+            RandomAccessFile raf = new RandomAccessFile("F:\\test.txt", "rw");) {
+
             //在虚拟机终止时，删除这个临时缓存文件
             tmp.deleteOnExit();
-            FileOutputStream fos = new FileOutputStream(tmp);
-            RandomAccessFile raf = new RandomAccessFile("F:\\test.txt", "rw");
+
 
             //1.写入临时文件
             //每两个字节跳过一个汉字
