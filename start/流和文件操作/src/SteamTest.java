@@ -98,30 +98,17 @@ class FileTest{
             System.out.println("异常捕获：按行获取文件失败！");
         }
     }
-    private static void writeToFile() throws IOException {
-        long skip = 20;
-        String str = "王五|男性|20\n王五|男性|20";
+    private static void writeToFile() {
+        String str = "雷1|男性|10\r";
+        String str1 = "雷2|女性|12";
         String fileName = "F:\\tmp.txt";
         try {
-            RandomAccessFile randomAccessFile = new RandomAccessFile(fileName, "rw");
-            if (skip < 0 || skip > randomAccessFile.length()) {
-                return;
-            }
-            byte[] b = str.getBytes();
-            System.out.println(b.length);
-            System.out.println(randomAccessFile.length());
-            randomAccessFile.setLength(randomAccessFile.length() + b.length);
-            //把后面的内容往后面挪
-            for (long i = randomAccessFile.length() - 1; i > b.length + skip - 1; i--) {
-                randomAccessFile.seek(i - b.length);
-                byte temp = randomAccessFile.readByte();
-                randomAccessFile.seek(i);
-                randomAccessFile.writeByte(temp);
-            }
-            randomAccessFile.seek(skip);
-            randomAccessFile.write(b);
-            randomAccessFile.close();
-        } catch (Exception e) {
+            File f = new File(fileName);
+            Writer out = new FileWriter(f);
+            out.write(str);
+            out.write(str1);
+            out.close();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
