@@ -10,9 +10,7 @@ import java.util.Scanner;
 public class ProgramTest {
     public static final String R = "\n\n\n\n\n\n";
     public static int getLine(){
-        Scanner s = new Scanner(System.in);
-        int input = s.nextInt();
-        return input;
+        return new Scanner(System.in).nextInt();
     }
     public static void menu(){
         System.out.println(R + "———员工信息管理系统————");
@@ -29,7 +27,7 @@ public class ProgramTest {
             MyFile myFile = new MyFile();
             List<Person> personList = myFile.getAndAdd();
             //业务逻辑
-            int input = 0;
+            int input;
             do{
                 menu();
                 input = getLine();

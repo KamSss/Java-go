@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.Stack;
+import java.util.HashSet;
 
 /**
  * @author ZHZ
@@ -15,19 +14,22 @@ import java.util.Stack;
 //    }
 //}
 
-//class Dog{
-//    static final int BIG_DOG_LENGTH = 40;
-//    String name;
-//    int size;
-//    void bark(){
-//        if(size > BIG_DOG_LENGTH){
-//            System.out.println("我又不咬人.jpg " + name);
-//        }
-//        else{
-//            System.out.println("恶龙咆哮！嗷呜！" + name);
-//        }
-//    }
-//}
+class Dog{
+    static final int BIG_DOG_LENGTH = 40;
+    int DogID;
+    int size;
+    public Dog(int DogID){
+        this.DogID = DogID;
+    }
+    void bark(){
+        if(size > BIG_DOG_LENGTH){
+            System.out.println("我又不咬人.jpg " + name);
+        }
+        else{
+            System.out.println("恶龙咆哮！嗷呜！" + name);
+        }
+    }
+}
 //
 //class TestArrayList {
 //    public static void main(String[] args){
@@ -55,29 +57,53 @@ import java.util.Stack;
 //}
 
 
-class ExceptionTest{
-    public static void main(String[] args){
-        try{
-            //保护代码，出现异常之前的每一条代码都会执行
-            int[] a = new int[2];
+//class ExceptionTest{
+//    public static void main(String[] args){
+//        try{
+//            //保护代码，出现异常之前的每一条代码都会执行
+//            int[] a = new int[2];
+//
+//            if (true){
+//                throw new MyRuntimeException("MSG1");
+//            }
+//            System.out.println("尝试越界访问数组");
+//            //出现异常之后跳转到catch模块尝试捕捉并执行自定制操作
+//            System.out.println("尝试越界访问数组" + a[3]);
+//        } catch (MyRuntimeException e){
+//            e.getMsg();
+//            System.out.println(e.getMessage());
+//        } catch(ArrayIndexOutOfBoundsException e){
+//            System.out.println("捕捉到异常：" + e);
+//        } catch (Exception e){
+//
+//        } finally {
+//
+//        }
+//        System.out.println("TryCatch结束");
+//    }
+//}
 
-            if (true){
-                throw new MyRuntimeException("MSG1");
-            }
-            System.out.println("尝试越界访问数组");
-            //出现异常之后跳转到catch模块尝试捕捉并执行自定制操作
-            System.out.println("尝试越界访问数组" + a[3]);
-        } catch (MyRuntimeException e){
-            e.getMsg();
-            System.out.println(e.getMessage());
-        } catch(ArrayIndexOutOfBoundsException e){
-            System.out.println("捕捉到异常：" + e);
-        } catch (Exception e){
-
-        } finally {
-
+/**
+ * @author ZHZ
+ */
+public class FirstJavaFile{
+    static void m1(){
+        Dog a = new Dog(20190320);
+        Dog b = new Dog(20190320);
+        HashSet<Dog> mySet = new HashSet<Dog>();
+        mySet.add(a);
+        mySet.add(b);
+        System.out.println(mySet.size());
+    }
+    static void m2(){
+        String a = "a";
+        String b = "a";
+        if(a.hashCode() == b.hashCode()){
+            System.out.println("a、b的hashcode一致");
         }
-        System.out.println("TryCatch结束");
+    }
+    public static void main(String[] args){
+        m1();
+        //m2();
     }
 }
-
