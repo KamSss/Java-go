@@ -23,7 +23,8 @@ public class Sql {
     }
     private void sqlUpdate(String sql,String operator){
         try {
-//            statement.executeUpdate(sql);
+            statement.executeUpdate(sql);
+        }catch (SQLException se){
             se.printStackTrace();
         }
     }
