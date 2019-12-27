@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <!-- namespace：命名空间，用于隔离sql-->
+    <mapper namespace="dao.StudentDao">
+    <!-- namespace+id用来定位具体的sql parameterType：参数类型 resultType：返回值，如果bean与数据库一一对应，则会自动映射
+        where id=#{v}，#{} 占位符，里面要写一个任意字符-->
+    <select id="mySelectOne" parameterType="int" resultType="student.Student">
+            select * from table1 where id=#{v}
+    </select>
+    <select id="InterfaceSelectOne" parameterType="int" resultType="student.Student">
+            select * from table1 where id=#{v}
+    </select>
+</mapper>

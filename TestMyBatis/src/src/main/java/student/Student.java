@@ -12,7 +12,7 @@ public class Student {
         super();
     }
 
-    public Student(int id,String name, int age) {
+    public Student(int id,String name,int age) {
         super();
         this.id = id;
         this.name = name;
@@ -44,6 +44,6 @@ public class Student {
     }
 
     public void showStudent() {
-        System.out.println("Student[id=" + this.id + ", name=" + this.name + ", age=" + this.age + "]");
+        System.out.println("查询结果：[id=" + this.id + ", name=" + this.name + ", age=" + this.age + "]" + "\n");
     }
 }
