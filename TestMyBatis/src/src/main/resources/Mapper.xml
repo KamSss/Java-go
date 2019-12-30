@@ -10,4 +10,17 @@
     <select id="InterfaceSelectOne" parameterType="int" resultType="student.Student">
             select * from table1 where id=#{v}
     </select>
+
+    <select id="query" parameterType="student.StudentParam" resultType="student.Student">
+            select * from table1 where 1=1
+            <if test="id!=null">
+                and id=#{id}
+            </if>
+            <if test="">
+                and id=#{v}
+            </if>
+            <if test="">
+                and id=#{v}
+            </if>
+    </select>
 </mapper>
