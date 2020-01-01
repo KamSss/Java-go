@@ -4,9 +4,7 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
-import org.apache.ibatis.logging.stdout.StdOutImpl;
 import student.Student;
-import student.StudentParam;
 
 import java.util.List;
 
@@ -68,7 +66,4 @@ public interface StudentDao {
      */
     @Select("select * from table1 where age=#{v}")
     List<Student> annotationSelectByAge(int age);
-
-    List<Student> query(StudentParam studentParam);
-
 }

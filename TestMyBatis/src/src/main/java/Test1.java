@@ -106,12 +106,12 @@ public class Test1 {
         // 通过工厂创建sqlSession
         SqlSession session = sqlSessionFactory.openSession();
 
-//        wayOne(session);
-//        wayTwo(session);
-//
+        wayOne(session);
+        wayTwo(session);
+
         selectByAnnotation(session);
-//        insertByAnnotation(session);
-//        deleteByAnnotation(session);
-//        updateByAnnotation(session);
+        insertByAnnotation(session);
+        deleteByAnnotation(session);
+        updateByAnnotation(session);
     }
 }
