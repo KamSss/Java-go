@@ -19,7 +19,6 @@ public class MyFile {
                     (new FileInputStream(f), StandardCharsets.UTF_8));
             String thisLine;
             while(((thisLine = br.readLine()) != null)){
-                int i = 1;
                 Person thisPerson = new Person();
                 //把thisLine根据“|”分隔开并放入String[]
                 String[] split = thisLine.split("\\|");
